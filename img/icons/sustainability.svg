@@ -16,8 +16,8 @@
       }
     </style>
     <linearGradient id="linear-gradient" x1="767.09" y1="36.09" x2="809.36" y2="36.09" gradientTransform="translate(67.61 -763.59) rotate(90)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ff988d"/>
-      <stop offset="1" stop-color="#8e31bb"/>
+      <stop offset="0" stop-color="#69b42d"/>
+      <stop offset="1" stop-color="#009f6f"/>
     </linearGradient>
   </defs>
   <g class="cls-1">

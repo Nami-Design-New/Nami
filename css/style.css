@@ -229,10 +229,10 @@ content {
   align-items: center;
 }
 .spinerLoader .spinerLoaderImg {
-  width: 200px;
-  height: 200px;
-  -webkit-mask-image: url("../img/logo.svg");
-          mask-image: url("../img/logo.svg");
+  width: 100px;
+  height: 100px;
+  -webkit-mask-image: url("../img/favicon.svg");
+          mask-image: url("../img/favicon.svg");
   -webkit-mask-size: contain;
           mask-size: contain;
   -webkit-mask-position: center;
@@ -246,19 +246,19 @@ content {
   position: absolute;
   left: 0;
   top: 0;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   z-index: 2;
-  background-color: var(--mainColor);
-  transform: translateY(100%);
-  animation: slide-up 1.5s forwards;
+  background: var(--linearGradient);
+  transform: translateY(50%) translateX(-100%) rotate(60deg);
+  animation: slide-up 1s forwards;
 }
 .spinerLoader .spinerLoaderImg::before {
   content: "";
   display: block;
-  width: 200px;
-  height: 200px;
-  background-image: url("../img/logo.svg");
+  width: 100px;
+  height: 100px;
+  background-image: url("../img/favicon.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -266,10 +266,10 @@ content {
 }
 @keyframes slide-up {
   from {
-    transform: translateY(100%);
+    transform: translateY(50%) translateX(-100%) rotate(60deg);
   }
   to {
-    transform: translateY(0%);
+    transform: translateY(0%) translateX(0%) rotate(60deg);
   }
 }
 
@@ -327,7 +327,7 @@ header {
   padding: 12px;
 }
 header .inner {
-  width: min(100% - 8px, 1440px);
+  width: min(100% - 8px, 1320px);
   margin: auto;
   display: flex;
   align-items: center;
@@ -541,7 +541,7 @@ header.headerAnimate .inner {
   align-items: center;
   flex-direction: column;
   position: relative;
-  width: min(100% - 8px, 1440px);
+  width: min(100% - 8px, 1320px);
   margin: 0 auto;
   padding: 60px 0;
   gap: 16px;
@@ -879,8 +879,10 @@ header.headerAnimate .inner {
   padding: 32px;
   height: 100%;
   display: flex;
-  flex-direction: column;
   gap: 24px;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1254901961);
   border-radius: 12px;
 }
@@ -890,19 +892,32 @@ header.headerAnimate .inner {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1254901961);
   }
 }
-.vision .container .group .title {
+.vision .container .group .text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 200px;
+  flex: 1;
+}
+.vision .container .group .text .title {
   font-weight: bold;
   font-family: "fontBold", sans-serif !important;
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.vision .container .group .title img {
+.vision .container .group .text .title img {
   height: 32px;
   aspect-ratio: 1/1;
 }
-.vision .container .group .des {
-  color: var(--lightGrayColor);
+.vision .container .group .text .des {
+  color: var(--grayColor);
+}
+.vision .container .group video,
+.vision .container .group img {
+  max-width: 120px;
+  aspect-ratio: 1;
+  mix-blend-mode: multiply;
 }
 .vision .container .values {
   display: flex;
@@ -952,6 +967,7 @@ header.headerAnimate .inner {
   transition: var(--transition);
   padding: 20px;
   margin-bottom: auto;
+  mix-blend-mode: unset;
 }
 .vision .container .values .value h6 {
   transition: var(--transition);
@@ -1288,7 +1304,7 @@ footer .border-top {
 }
 .serviceArea .serviceTop .secTitle {
   font-weight: bold;
-  color: var(--darkColor);
+  color: var(--whiteColor);
   text-transform: uppercase;
   font-family: fontBold;
   font-size: 40px;
@@ -1317,7 +1333,7 @@ footer .border-top {
   min-width: 300px;
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
-  background-color: rgba(17, 25, 40, 0.21);
+  background-color: rgba(255, 255, 255, 0.075);
   padding: 40px;
   border-radius: 24px;
   display: flex;
@@ -1337,6 +1353,7 @@ footer .border-top {
 .serviceArea .allServices .serviceItem .title {
   font-family: "fontBold";
   line-height: 1;
+  color: var(--whiteColor);
 }
 .serviceArea .allServices .serviceItem .subTitle {
   color: var(--lightGrayColor);
@@ -1362,9 +1379,18 @@ footer .border-top {
   border-radius: 24px;
   background-color: var(--whiteColor);
   align-content: center;
-  opacity: 0;
-  visibility: hidden;
   transition: var(--transition);
+  animation: subHide 0.5s forwards;
+}
+@keyframes subHide {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 .serviceArea .allServices .serviceItem .serviceList span {
   min-width: calc(50% - 8px);
@@ -1380,6 +1406,7 @@ footer .border-top {
   aspect-ratio: 1;
   -o-object-fit: contain;
      object-fit: contain;
+  transform: scaleX(-1);
 }
 .serviceArea .allServices .serviceItem:hover .serviceList {
   animation: subMove 0.5s forwards;
