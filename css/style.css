@@ -5,10 +5,10 @@
   --linearGradient: linear-gradient(
     45deg,
     #009f6f 0%,
-    #32d8a6 50%,
+    #14b967 50%,
     #69b42d 100%
   );
-  --secondColor: #f7f3e7;
+  --secondColor: #009f6f;
   --goldColor: #f4bd4b;
   --whiteColor: #ffffff;
   --darkColor: #191919;
@@ -1049,7 +1049,7 @@ header.headerAnimate .inner {
   background-repeat: no-repeat;
   background-size: contain;
   transition: var(--transition);
-  filter: brightness(0) invert(1);
+  transform: scaleX(-1);
 }
 @media (max-width: 768px) {
   .swiperControl .swiperBtns .swiper-button-next::after,
@@ -1076,7 +1076,6 @@ header.headerAnimate .inner {
 }
 .swiperControl .swiperBtns .swiper-button-next::after {
   transform: unset;
-  transform: scaleX(-1);
 }
 .swiperControl .swiper-pagination {
   position: relative;
@@ -1098,85 +1097,6 @@ header.headerAnimate .inner {
 .swiperControl .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   width: 16px;
   height: 16px;
-}
-
-footer {
-  background: var(--mainColor);
-  position: relative;
-  z-index: 2;
-  padding: 40px 0;
-  color: var(--darkColor);
-}
-footer .logo img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: right;
-     object-position: right;
-  max-height: 40px;
-  filter: brightness(0) invert(1);
-}
-footer .title {
-  font-weight: bold;
-}
-footer .part {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-footer .part img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: right;
-     object-position: right;
-  max-height: 40px;
-  filter: brightness(0) invert(1);
-}
-footer .link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-footer .link path,
-footer .link svg {
-  fill: var(--whiteColor);
-}
-footer .link .icon {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-  border: 1px solid var(--whiteColor);
-}
-footer .link .icon svg {
-  width: 16px;
-  height: 16px;
-}
-footer .link a,
-footer .link p {
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  color: var(--darkColor);
-  transition: var(--transition);
-  direction: ltr;
-  cursor: pointer;
-}
-footer .link a span,
-footer .link p span {
-  color: var(--darkColor);
-}
-footer .link:hover p {
-  color: var(--goldColor);
-}
-footer .socialMedia a img {
-  filter: brightness(0) invert(1) contrast(0.8);
-}
-footer .border-top {
-  --bs-border-color: #ffffff30;
 }
 
 .clients {
@@ -1212,11 +1132,11 @@ footer .border-top {
 .clients .sectionTitle .title {
   font-style: italic;
   font-weight: bold;
-  color: #eee;
+  color: var(--grayColor);
   font-family: fontBold;
 }
 .clients .sectionTitle .hint {
-  color: #eee;
+  color: var(--grayColor);
 }
 .clients .logo {
   padding: 10px;
@@ -1230,7 +1150,7 @@ footer .border-top {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: grayscale(1) opacity(0.7);
   transition: var(--transition);
 }
 .clients .logo:hover img {
@@ -1790,17 +1710,17 @@ footer .border-top {
   flex-direction: column;
   width: 100%;
   gap: 8px;
-  padding: 24px;
+  padding: 28px;
   justify-content: flex-end;
 }
 .flipCard .cardFront .content .title {
   font-family: "fontBold";
-  color: var(--darkColor);
+  color: var(--whiteColor);
   text-transform: capitalize;
 }
 .flipCard .cardFront .content .location,
 .flipCard .cardFront .content .date {
-  color: var(--darkColor);
+  color: var(--whiteColor);
   display: flex;
   align-items: center;
   font-size: 14px;
@@ -1815,7 +1735,7 @@ footer .border-top {
      object-fit: contain;
 }
 .flipCard .cardBack {
-  padding: 20px;
+  padding: 28px;
   position: absolute;
   border-radius: 20px;
   width: 100%;
@@ -1833,7 +1753,7 @@ footer .border-top {
   gap: 8px;
 }
 .flipCard .cardBack .content .favimg {
-  height: 24px;
+  height: 40px;
   -o-object-position: right;
      object-position: right;
   -o-object-fit: contain;
@@ -1867,6 +1787,11 @@ footer .border-top {
   -o-object-fit: contain;
      object-fit: contain;
   aspect-ratio: 1;
+  transform: scaleX(-1);
+  transition: var(--transition);
+}
+.flipCard .cardBack .content .outlineGradient:hover img {
+  filter: brightness(0) invert(1);
 }
 .flipCard .cardBack.tech .content .animatedLink {
   color: #cea85b;
@@ -1948,11 +1873,11 @@ footer .border-top {
 .ourWork .sectionTop .top .secSubTitle {
   font-style: italic;
   font-weight: bold;
-  color: #eee;
+  color: var(--grayColor);
   font-family: fontBold;
 }
 .ourWork .sectionTop .top .hint {
-  color: #eee;
+  color: var(--grayColor);
 }
 
 .stats .container {
@@ -1982,7 +1907,7 @@ footer .border-top {
 }
 .stats .container .top .secTitle {
   font-weight: bold;
-  color: var(--darkColor);
+  color: var(--whiteColor);
   text-transform: uppercase;
   font-family: fontBold;
   font-size: 30px;
@@ -2025,14 +1950,16 @@ footer .border-top {
 .stats .container .all .statistic .counterUp {
   font-weight: bold;
   font-family: "fontBold";
+  color: var(--whiteColor);
 }
 .stats .container .all .statistic h6 {
   font-family: "fontBold";
   text-transform: capitalize;
+  color: var(--whiteColor);
 }
 
 .careers {
-  background: var(--mainColor);
+  background: var(--mainColor20);
   padding: 60px 24px;
 }
 .careers .container {
@@ -2058,7 +1985,7 @@ footer .border-top {
 }
 .careers .top .secTitle {
   font-weight: bold;
-  color: var(--darkColor);
+  color: var(--mainColor);
   text-transform: uppercase;
   font-family: fontBold;
   font-size: 30px;
@@ -2067,11 +1994,11 @@ footer .border-top {
 .careers .top .secSubTitle {
   font-style: italic;
   font-weight: bold;
-  color: #eee;
+  color: var(--grayColor);
   font-family: fontBold;
 }
 .careers .top .hint {
-  color: #eee;
+  color: var(--darkColor);
 }
 .careers form {
   display: flex;
@@ -2095,6 +2022,9 @@ footer .border-top {
   text-align: center;
   align-items: center;
   justify-content: center;
+  color: var(--whiteColor);
+  -webkit-clip-path: polygon(10% 0%, 90% 0%, 102% 50%, 90% 100%, 10% 100%, -2% 50%);
+          clip-path: polygon(10% 0%, 90% 0%, 102% 50%, 90% 100%, 10% 100%, -2% 50%);
 }
 .careers form .outlineGradient::after {
   display: none;
@@ -2104,9 +2034,10 @@ footer .border-top {
   padding: 80px 0;
 }
 .contact form {
-  background: #000000;
+  background: var(--secondColor);
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1019607843);
   padding: 20px;
+  padding-top: 32px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -2137,7 +2068,7 @@ footer .border-top {
 .contact form .form-group .inputfield label {
   position: absolute;
   font-size: 14px;
-  color: var(--grayColor);
+  color: var(--whiteColor);
   right: 16px;
   transform: translateY(-50%);
   top: 50%;
@@ -2154,7 +2085,7 @@ footer .border-top {
 }
 .contact form .form-group .inputfield label.h {
   top: -4px;
-  color: var(--mainColor);
+  color: var(--whiteColor);
 }
 .contact form .form-group .inputfield input,
 .contact form .form-group .inputfield textarea {
@@ -2163,6 +2094,7 @@ footer .border-top {
   border: none;
   outline: none;
   background: none;
+  color: var(--whiteColor);
 }
 .contact form .form-group .inputfield input:focus + span::after,
 .contact form .form-group .inputfield textarea:focus + span::after {
@@ -2175,7 +2107,7 @@ footer .border-top {
 .contact form .form-group .inputfield .highlight {
   width: 100%;
   height: 1px;
-  background: var(--grayColor);
+  background: var(--lightGrayColor);
 }
 .contact form .form-group .inputfield .highlight::after {
   content: "";
@@ -2183,7 +2115,7 @@ footer .border-top {
   transition: var(--transition);
   right: 50%;
   height: 1px;
-  background: var(--mainColor);
+  background: var(--whiteColor);
   position: absolute;
   transform: translate(50%);
 }
@@ -2193,9 +2125,6 @@ footer .border-top {
   width: fit-content;
   align-self: flex-end;
   margin-left: 16px;
-}
-.contact form .outlineGradient::after {
-  background: #000000;
 }
 .contact .contact_info {
   width: 100%;
@@ -2237,11 +2166,11 @@ footer .border-top {
 .contact .contact_info .top .secSubTitle {
   font-style: italic;
   font-weight: bold;
-  color: #eee;
+  color: var(--grayColor);
   font-family: fontBold;
 }
 .contact .contact_info .top .hint {
-  color: #eee;
+  color: var(--grayColor);
 }
 .contact .contact_info ul {
   list-style: none;
@@ -2289,16 +2218,18 @@ footer .border-top {
 }
 .contact .contact_info .field .text {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 4px 16px;
 }
 .contact .contact_info .field .text h4 {
   margin-bottom: 4px;
-  color: var(--mainColor);
+  color: var(--grayColor);
   font-size: 13px;
   font-weight: bold;
+  width: 100%;
 }
 .contact .contact_info .field .text a {
-  color: var(--);
+  color: var(--secondColor);
 }
 .contact .contact_info .field:hover .icon {
   border-color: transparent;
