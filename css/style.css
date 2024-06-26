@@ -951,9 +951,11 @@ header.headerAnimate .inner {
   content: "";
   width: 100%;
   height: 100%;
-  top: 0;
-  right: 0;
-  background-color: var(--mainColor);
+  top: 0%;
+  right: 100%;
+  background: var(--linearGradient);
+  background-size: 400%;
+  animation: animateBg 2s linear infinite;
   z-index: -1;
   border-radius: 12px;
   opacity: 0;
@@ -987,6 +989,7 @@ header.headerAnimate .inner {
   filter: brightness(0) invert(1);
 }
 .vision .container .values .value:hover::after {
+  right: 0%;
   opacity: 1;
   visibility: visible;
 }
@@ -1254,9 +1257,9 @@ header.headerAnimate .inner {
   position: relative;
   flex: 1 32%;
   min-width: 300px;
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.075);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.075);
   border: 2px solid rgba(0, 159, 111, 0.4117647059);
   padding: 40px;
   border-radius: 24px;

@@ -907,9 +907,11 @@ header {
           content: "";
           width: 100%;
           height: 100%;
-          top: 0;
-          right: 0;
-          background-color: var(--mainColor);
+          top: 0%;
+          right: 100%;
+          background: var(--linearGradient);
+          background-size: 400%;
+          animation: animateBg 2s linear infinite;
           z-index: -1;
           border-radius: 12px;
           opacity: 0;
@@ -944,6 +946,7 @@ header {
             filter: brightness(0) invert(1);
           }
           &::after {
+            right: 0%;
             opacity: 1;
             visibility: visible;
           }
@@ -1053,8 +1056,6 @@ header {
     }
   }
 }
-
-
 .clients {
   background: var(--whiteColor);
   position: relative;
@@ -1205,8 +1206,8 @@ header {
       position: relative;
       flex: 1 32%;
       min-width: 300px;
-      backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.075);
+      backdrop-filter: blur(20px);
+      background-color: rgba(0, 0, 0, 0.075);
       border: 2px solid #009f6f69;
       padding: 40px;
       border-radius: 24px;
@@ -1661,7 +1662,6 @@ header {
       justify-content: center;
       color: var(--whiteColor);
       clip-path: polygon(10% 0%, 90% 0%, 102% 50%, 90% 100%, 10% 100%, -2% 50%);
-
       &::after {
         display: none;
       }
