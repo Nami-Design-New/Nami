@@ -48,7 +48,7 @@
   background: var(--whiteColor);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--lightGrayColor);
+  background-color: #eee;
   outline: none;
   border-radius: 20px !important;
 }
@@ -858,7 +858,6 @@ header {
         gap: 12px;
         min-width: 200px;
         flex: 1;
-
         .title {
           font-weight: bold;
           font-family: "fontBold", sans-serif !important;
@@ -874,11 +873,12 @@ header {
           color: var(--grayColor);
         }
       }
-      video,
-      img {
+      video {
         max-width: 120px;
         aspect-ratio: 1;
         mix-blend-mode: multiply;
+        filter: hue-rotate(270deg);
+        user-select: none;
       }
     }
     .values {
@@ -1159,11 +1159,11 @@ footer {
     .title {
       font-style: italic;
       font-weight: bold;
-      color: var(--lightGrayColor);
+      color: #eee;
       font-family: fontBold;
     }
     .hint {
-      color: var(--lightGrayColor);
+      color: #eee;
     }
   }
   .logo {
@@ -1235,7 +1235,7 @@ footer {
   }
 }
 .serviceArea {
-  background: linear-gradient(#69b42dc4, #69b42dcb), url("../img/services.jpg");
+  background: linear-gradient(#009f6fc4, #009f6fcb), url("../img/services.jpg");
   background-size: 300%;
   animation: animateBg 80s linear infinite;
   padding: 80px 8px;
@@ -1262,11 +1262,11 @@ footer {
     .secSubTitle {
       font-style: italic;
       font-weight: bold;
-      color: var(--lightGrayColor);
+      color: #eee;
       font-family: fontBold;
     }
     .hint {
-      color: var(--lightGrayColor);
+      color: #eee;
     }
   }
   .allServices {
@@ -1282,15 +1282,15 @@ footer {
       min-width: 300px;
       backdrop-filter: blur(12px);
       background-color: rgba(255, 255, 255, 0.075);
-      // border: 2px solid #69b42d30;
+      border: 2px solid #009f6f69;
       padding: 40px;
       border-radius: 24px;
       display: flex;
       flex-direction: column;
       gap: 24px;
       .serviceIcon {
-        width: 64px;
-        height: 64px;
+        width: 56px;
+        height: 56px;
         object-fit: contain;
         margin-bottom: 12px;
       }
@@ -1299,13 +1299,10 @@ footer {
       gap: 8px;
       .title {
         font-family: "fontBold";
-        line-height: 1;
         color: var(--whiteColor);
       }
       .subTitle {
-        color: var(--lightGrayColor);
-        font-size: 14px;
-        line-height: 1.4;
+        color: #eee;
       }
       .arrow {
         margin-top: 24px;
@@ -1587,11 +1584,11 @@ footer {
       .secSubTitle {
         font-style: italic;
         font-weight: bold;
-        color: var(--lightGrayColor);
+        color: #eee;
         font-family: fontBold;
       }
       .hint {
-        color: var(--lightGrayColor);
+        color: #eee;
       }
     }
   }
@@ -1633,11 +1630,11 @@ footer {
       .secSubTitle {
         font-style: italic;
         font-weight: bold;
-        color: var(--lightGrayColor);
+        color: #eee;
         font-family: fontBold;
       }
       .hint {
-        color: var(--lightGrayColor);
+        color: #eee;
       }
     }
     .all {
@@ -1700,11 +1697,11 @@ footer {
     .secSubTitle {
       font-style: italic;
       font-weight: bold;
-      color: var(--lightGrayColor);
+      color: #eee;
       font-family: fontBold;
     }
     .hint {
-      color: var(--lightGrayColor);
+      color: #eee;
     }
   }
   form {
@@ -1856,11 +1853,11 @@ footer {
       .secSubTitle {
         font-style: italic;
         font-weight: bold;
-        color: var(--lightGrayColor);
+        color: #eee;
         font-family: fontBold;
       }
       .hint {
-        color: var(--lightGrayColor);
+        color: #eee;
       }
     }
     ul {

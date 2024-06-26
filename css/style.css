@@ -51,7 +51,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--lightGrayColor);
+  background-color: #eee;
   outline: none;
   border-radius: 20px !important;
 }
@@ -913,11 +913,14 @@ header.headerAnimate .inner {
 .vision .container .group .text .des {
   color: var(--grayColor);
 }
-.vision .container .group video,
-.vision .container .group img {
+.vision .container .group video {
   max-width: 120px;
   aspect-ratio: 1;
   mix-blend-mode: multiply;
+  filter: hue-rotate(270deg);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .vision .container .values {
   display: flex;
@@ -1209,11 +1212,11 @@ footer .border-top {
 .clients .sectionTitle .title {
   font-style: italic;
   font-weight: bold;
-  color: var(--lightGrayColor);
+  color: #eee;
   font-family: fontBold;
 }
 .clients .sectionTitle .hint {
-  color: var(--lightGrayColor);
+  color: #eee;
 }
 .clients .logo {
   padding: 10px;
@@ -1282,7 +1285,7 @@ footer .border-top {
   }
 }
 .serviceArea {
-  background: linear-gradient(rgba(105, 180, 45, 0.768627451), rgba(105, 180, 45, 0.7960784314)), url("../img/services.jpg");
+  background: linear-gradient(rgba(0, 159, 111, 0.768627451), rgba(0, 159, 111, 0.7960784314)), url("../img/services.jpg");
   background-size: 300%;
   animation: animateBg 80s linear infinite;
   padding: 80px 8px;
@@ -1313,11 +1316,11 @@ footer .border-top {
 .serviceArea .serviceTop .secSubTitle {
   font-style: italic;
   font-weight: bold;
-  color: var(--lightGrayColor);
+  color: #eee;
   font-family: fontBold;
 }
 .serviceArea .serviceTop .hint {
-  color: var(--lightGrayColor);
+  color: #eee;
 }
 .serviceArea .allServices {
   display: flex;
@@ -1334,6 +1337,7 @@ footer .border-top {
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
   background-color: rgba(255, 255, 255, 0.075);
+  border: 2px solid rgba(0, 159, 111, 0.4117647059);
   padding: 40px;
   border-radius: 24px;
   display: flex;
@@ -1344,21 +1348,18 @@ footer .border-top {
   gap: 8px;
 }
 .serviceArea .allServices .serviceItem .serviceIcon {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   -o-object-fit: contain;
      object-fit: contain;
   margin-bottom: 12px;
 }
 .serviceArea .allServices .serviceItem .title {
   font-family: "fontBold";
-  line-height: 1;
   color: var(--whiteColor);
 }
 .serviceArea .allServices .serviceItem .subTitle {
-  color: var(--lightGrayColor);
-  font-size: 14px;
-  line-height: 1.4;
+  color: #eee;
 }
 .serviceArea .allServices .serviceItem .arrow {
   margin-top: 24px;
@@ -1947,11 +1948,11 @@ footer .border-top {
 .ourWork .sectionTop .top .secSubTitle {
   font-style: italic;
   font-weight: bold;
-  color: var(--lightGrayColor);
+  color: #eee;
   font-family: fontBold;
 }
 .ourWork .sectionTop .top .hint {
-  color: var(--lightGrayColor);
+  color: #eee;
 }
 
 .stats .container {
@@ -1996,11 +1997,11 @@ footer .border-top {
 .stats .container .top .secSubTitle {
   font-style: italic;
   font-weight: bold;
-  color: var(--lightGrayColor);
+  color: #eee;
   font-family: fontBold;
 }
 .stats .container .top .hint {
-  color: var(--lightGrayColor);
+  color: #eee;
 }
 .stats .container .all {
   display: flex;
@@ -2066,11 +2067,11 @@ footer .border-top {
 .careers .top .secSubTitle {
   font-style: italic;
   font-weight: bold;
-  color: var(--lightGrayColor);
+  color: #eee;
   font-family: fontBold;
 }
 .careers .top .hint {
-  color: var(--lightGrayColor);
+  color: #eee;
 }
 .careers form {
   display: flex;
@@ -2236,11 +2237,11 @@ footer .border-top {
 .contact .contact_info .top .secSubTitle {
   font-style: italic;
   font-weight: bold;
-  color: var(--lightGrayColor);
+  color: #eee;
   font-family: fontBold;
 }
 .contact .contact_info .top .hint {
-  color: var(--lightGrayColor);
+  color: #eee;
 }
 .contact .contact_info ul {
   list-style: none;
