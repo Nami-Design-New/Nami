@@ -1,14 +1,14 @@
 :root {
-  --mainColor: #69b42d;
-  --mainColor20: #69b42d33;
-  --mainColor05: #69b42d0d;
+  --mainColor: #009f6f;
+  --mainColor20: #009f6f33;
+  --mainColor05: #009f6f0d;
   --linearGradient: linear-gradient(
     45deg,
-    #009f6f 0%,
-    #14b967 50%,
-    #69b42d 100%
+    #11b14e 0%,
+    #38C684 50%,
+    #009f6f 100%
   );
-  --secondColor: #009f6f;
+  --secondColor: #11b14e;
   --goldColor: #f4bd4b;
   --whiteColor: #ffffff;
   --darkColor: #191919;
@@ -51,7 +51,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #eee;
+  background-color: #cacaca;
   outline: none;
   border-radius: 20px !important;
 }
@@ -150,13 +150,13 @@ input {
 
 ::-moz-placeholder {
   font-size: 12px;
-  color: #bababa !important;
+  color: #8d8d8d !important;
   font-weight: normal !important;
 }
 
 ::placeholder {
   font-size: 12px;
-  color: #bababa !important;
+  color: #8d8d8d !important;
   font-weight: normal !important;
 }
 
@@ -214,6 +214,9 @@ content {
   min-height: calc(100dvh - 320px);
   display: flex;
   flex-direction: column;
+  background: var(--whiteColor);
+  position: relative;
+  z-index: 2;
 }
 
 .spinerLoader {
@@ -467,7 +470,7 @@ header .inner .language:after {
 header.headerAnimate .inner {
   width: min(100% - 8px, 1000px);
   background-color: var(--whiteColor);
-  box-shadow: 0px 20px 100px rgba(105, 180, 45, 0.5411764706);
+  box-shadow: 0px 20px 100px rgba(0, 159, 111, 0.5411764706);
 }
 
 .outlineGradient {
@@ -573,7 +576,7 @@ header.headerAnimate .inner {
   font-weight: bold;
   font-family: "fontBold", sans-serif !important;
   font-size: 60px;
-  line-height: 65px;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 .hero .text .outlineGradient {
@@ -1824,7 +1827,7 @@ header.headerAnimate .inner {
 .ourWork {
   padding: 60px 12px;
   padding-bottom: 150px;
-  background-color: var(--mainColor05);
+  background-color: var(--mainColor20);
   z-index: 1;
 }
 .ourWork .swiperControl {
@@ -1892,6 +1895,49 @@ header.headerAnimate .inner {
   border-radius: 20px;
   animation: animateBg 5s linear infinite;
   background-size: 400%;
+  overflow: hidden;
+}
+.stats .container .shapes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  z-index: -1;
+  width: 600px;
+  height: 600px;
+}
+.stats .container .shapes span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  aspect-ratio: 1;
+  border: 4px solid rgba(255, 255, 255, 0.1882352941);
+  border-radius: 60% 60% 40% 40%/50% 50% 50% 50%;
+  transition: var(--transition);
+  animation: rotate 5s linear infinite;
+}
+.stats .container .shapes span:nth-child(1) {
+  width: 70%;
+}
+.stats .container .shapes span:nth-child(2) {
+  width: 50%;
+  border-radius: 50% 50% 40% 50%/60% 80% 40% 40%;
+  border-width: 8px;
+}
+.stats .container .shapes span:nth-child(3) {
+  width: 30%;
+  border-radius: 50% 60% 50% 50%/60% 60% 80% 40%;
+  border-width: 12px;
+}
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 .stats .container .top {
   text-align: center;
@@ -1960,10 +2006,34 @@ header.headerAnimate .inner {
   text-transform: capitalize;
   color: var(--whiteColor);
 }
+.stats .container:hover .shapes span:nth-child(1) {
+  width: 90%;
+}
+.stats .container:hover .shapes span:nth-child(2) {
+  width: 60%;
+}
+.stats .container:hover .shapes span:nth-child(3) {
+  width: 35%;
+}
 
 .careers {
   background: var(--mainColor20);
   padding: 60px 24px;
+  position: relative;
+}
+.careers::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/favicon.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.06;
 }
 .careers .container {
   display: flex;
@@ -2037,7 +2107,7 @@ header.headerAnimate .inner {
   padding: 80px 0;
 }
 .contact form {
-  background: var(--secondColor);
+  background: var(--mainColor);
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1019607843);
   padding: 20px;
   padding-top: 32px;
@@ -2232,7 +2302,7 @@ header.headerAnimate .inner {
   width: 100%;
 }
 .contact .contact_info .field .text a {
-  color: var(--secondColor);
+  color: var(--mainColor);
 }
 .contact .contact_info .field:hover .icon {
   border-color: transparent;
@@ -2244,31 +2314,6 @@ header.headerAnimate .inner {
 }
 .contact .contact_info .field:hover .icon::after {
   opacity: 1;
-}
-
-.copywriting {
-  display: flex;
-  padding: 24px;
-  margin-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1882352941);
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.copywriting a {
-  color: var(--whiteColor) !important;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.copywriting a span {
-  text-transform: uppercase;
-}
-.copywriting img {
-  height: 24px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 .modal .modal-content {
@@ -2415,4 +2460,72 @@ header.headerAnimate .inner {
 .animate_chars,
 .animate_chars {
   overflow-x: inherit;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  transition: var(--transition);
+  padding: 80px 0 40px;
+  background: var(--linearGradient);
+  background-size: 400%;
+  animation: animateBg 8s linear infinite;
+}
+footer * {
+  color: var(--whiteColor);
+}
+footer .logo {
+  height: 60px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: right;
+     object-position: right;
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+}
+footer .copywriting {
+  display: flex;
+  padding: 16px 24px;
+  margin-top: 24px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.1882352941);
+  border-radius: 24px;
+}
+footer .copywriting .social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+footer .copywriting .social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--whiteColor);
+  background-color: transparent;
+  transition: var(--transition);
+}
+footer .copywriting .social a img {
+  height: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: var(--transition);
+}
+footer .copywriting .social a:hover {
+  background-color: var(--whiteColor);
+  transform: translateY(-4px);
+}
+footer .copywriting .social a:hover img {
+  filter: none;
 }/*# sourceMappingURL=style.css.map */

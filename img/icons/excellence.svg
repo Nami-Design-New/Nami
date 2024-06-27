@@ -12,12 +12,12 @@
       }
 
       .cls-3 {
-        fill: #69B42D;
+        fill: #009f6f;
       }
     </style>
     <linearGradient id="linear-gradient" x1="35.14" y1="34.74" x2="75.1" y2="34.74" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#69b42d"/>
-      <stop offset="1" stop-color="#009f6f"/>
+      <stop offset="0" stop-color="#009f6f"/>
+      <stop offset="1" stop-color="#11b14e"/>
     </linearGradient>
   </defs>
   <g class="cls-1">
