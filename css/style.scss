@@ -2149,6 +2149,9 @@ footer {
     flex-wrap: wrap;
     background-color: var(--mainColor05);
     border-radius: 24px;
+    @media screen and (max-width: 768px) {
+      justify-content: space-around;
+    }
     .social {
       display: flex;
       align-items: center;
@@ -2202,13 +2205,14 @@ footer {
       list-style: none;
       padding: 0;
       margin: 0;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 8px;
       li {
         display: flex;
         align-items: baseline;
         gap: 8px;
         position: relative;
+        min-width: 150px;
         &::before {
           content: "";
           height: 2px;
