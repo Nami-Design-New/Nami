@@ -5,7 +5,7 @@
   --linearGradient: linear-gradient(
     45deg,
     #11b14e 0%,
-    #38C684 50%,
+    #38c684 50%,
     #009f6f 100%
   );
   --secondColor: #11b14e;
@@ -181,8 +181,8 @@ content {
   display: flex;
   flex-direction: column;
   background: var(--whiteColor);
-  position: relative;
-  z-index: 2;
+  // position: relative;
+  // z-index: 2;
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -558,7 +558,7 @@ header {
       font-weight: bold;
       font-family: "fontBold", sans-serif !important;
       font-size: 60px;
-      line-height:1.2;
+      line-height: 1.2;
       text-transform: uppercase;
     }
     .outlineGradient {
@@ -1663,6 +1663,7 @@ header {
   background: var(--mainColor20);
   padding: 60px 24px;
   position: relative;
+  isolation: isolate;
   &::before {
     content: "";
     position: absolute;
@@ -2084,27 +2085,47 @@ header {
   overflow-x: inherit;
 }
 footer {
-  position: sticky;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  transition: var(--transition);
-  padding: 80px 0 40px;
-  background: var(--linearGradient);
-  background-size: 400%;
-  animation: animateBg 8s linear infinite;
-  * {
-    color: var(--whiteColor);
+  margin-top: 40px;
+  padding: 40px 0 40px;
+  position: relative;
+  // position: sticky;
+  // bottom: 0;
+  // right: 0;
+  // left: 0;
+  // width: 100%;
+  // z-index: 1;
+  // background: var(--linearGradient);
+  // background-size: 400%;
+  // animation: animateBg 8s linear infinite;
+  // * {
+  //   color: var(--whiteColor);
+  // }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    top: 0%;
+    right: 0%;
+    background: linear-gradient(
+      90deg,
+      rgb(94, 248, 63) 0%,
+      rgb(0, 226, 169) 33%,
+      rgb(150, 223, 241) 66%,
+      rgb(72, 246, 87) 100%
+    );
+    background-size: 400%;
+    animation: animateBg 8s linear infinite;
+    border-radius: 12px;
   }
-  .logo{
+
+  .logo {
     height: 60px;
     width: 100%;
     object-fit: contain;
     object-position: right;
     margin-bottom: 16px;
-    filter: brightness(0) invert(1);
+    // filter: brightness(0) invert(1);
   }
   .copywriting {
     display: flex;
@@ -2114,7 +2135,7 @@ footer {
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
-    background-color: #ffffff30;
+    background-color: var(--mainColor05);
     border-radius: 24px;
     .social {
       display: flex;
@@ -2127,20 +2148,72 @@ footer {
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        border: 1px solid var(--whiteColor);
+        border: 1px solid var(--mainColor);
         background-color: transparent;
         transition: var(--transition);
         img {
           height: 20px;
           object-fit: contain;
-          filter: brightness(0) invert(1);
           transition: var(--transition);
         }
         &:hover {
-          background-color: var(--whiteColor);
+          background-color: var(--mainColor);
           transform: translateY(-4px);
           img {
-            filter: none;
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .title {
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      &::after {
+        content: "";
+        height: 3px;
+        width: 32px;
+        border-radius: 4px;
+        background: var(--linearGradient);
+        background-size: 400%;
+        animation: animateBg 8s linear infinite;
+      }
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-direction: column;
+      gap: 8px;
+      li {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        position: relative;
+        &::before {
+          content: "";
+          height: 2px;
+          width: 4px;
+          transition: var(--transition);
+          border-radius: 4px;
+          background: var(--mainColor);
+        }
+        a {
+          color: var(--darkColor);
+        }
+        &:hover {
+          &::before {
+            width: 16px;
+          }
+          a {
+            color: var(--mainColor);
           }
         }
       }

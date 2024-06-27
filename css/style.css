@@ -5,7 +5,7 @@
   --linearGradient: linear-gradient(
     45deg,
     #11b14e 0%,
-    #38C684 50%,
+    #38c684 50%,
     #009f6f 100%
   );
   --secondColor: #11b14e;
@@ -215,8 +215,6 @@ content {
   display: flex;
   flex-direction: column;
   background: var(--whiteColor);
-  position: relative;
-  z-index: 2;
 }
 
 .spinerLoader {
@@ -2020,6 +2018,7 @@ header.headerAnimate .inner {
   background: var(--mainColor20);
   padding: 60px 24px;
   position: relative;
+  isolation: isolate;
 }
 .careers::before {
   content: "";
@@ -2463,20 +2462,21 @@ header.headerAnimate .inner {
 }
 
 footer {
-  position: sticky;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  margin-top: 40px;
+  padding: 40px 0 40px;
+  position: relative;
+}
+footer::after {
+  position: absolute;
+  content: "";
   width: 100%;
-  z-index: 1;
-  transition: var(--transition);
-  padding: 80px 0 40px;
-  background: var(--linearGradient);
+  height: 4px;
+  top: 0%;
+  right: 0%;
+  background: linear-gradient(90deg, rgb(94, 248, 63) 0%, rgb(0, 226, 169) 33%, rgb(150, 223, 241) 66%, rgb(72, 246, 87) 100%);
   background-size: 400%;
   animation: animateBg 8s linear infinite;
-}
-footer * {
-  color: var(--whiteColor);
+  border-radius: 12px;
 }
 footer .logo {
   height: 60px;
@@ -2486,7 +2486,6 @@ footer .logo {
   -o-object-position: right;
      object-position: right;
   margin-bottom: 16px;
-  filter: brightness(0) invert(1);
 }
 footer .copywriting {
   display: flex;
@@ -2496,7 +2495,7 @@ footer .copywriting {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  background-color: rgba(255, 255, 255, 0.1882352941);
+  background-color: var(--mainColor05);
   border-radius: 24px;
 }
 footer .copywriting .social {
@@ -2511,7 +2510,7 @@ footer .copywriting .social a {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--whiteColor);
+  border: 1px solid var(--mainColor);
   background-color: transparent;
   transition: var(--transition);
 }
@@ -2519,13 +2518,63 @@ footer .copywriting .social a img {
   height: 20px;
   -o-object-fit: contain;
      object-fit: contain;
-  filter: brightness(0) invert(1);
   transition: var(--transition);
 }
 footer .copywriting .social a:hover {
-  background-color: var(--whiteColor);
+  background-color: var(--mainColor);
   transform: translateY(-4px);
 }
 footer .copywriting .social a:hover img {
-  filter: none;
+  filter: brightness(0) invert(1);
+}
+footer .group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+footer .group .title {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+footer .group .title::after {
+  content: "";
+  height: 3px;
+  width: 32px;
+  border-radius: 4px;
+  background: var(--linearGradient);
+  background-size: 400%;
+  animation: animateBg 8s linear infinite;
+}
+footer .group ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+footer .group ul li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  position: relative;
+}
+footer .group ul li::before {
+  content: "";
+  height: 2px;
+  width: 4px;
+  transition: var(--transition);
+  border-radius: 4px;
+  background: var(--mainColor);
+}
+footer .group ul li a {
+  color: var(--darkColor);
+}
+footer .group ul li:hover::before {
+  width: 16px;
+}
+footer .group ul li:hover a {
+  color: var(--mainColor);
 }/*# sourceMappingURL=style.css.map */
