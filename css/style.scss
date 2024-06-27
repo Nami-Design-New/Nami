@@ -620,13 +620,14 @@ header {
   }
   .info {
     padding: 48px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     gap: 16px;
     @media (max-width: 768px) {
-      padding: 48px 16px;
+      padding: 24px 16px;
     }
     .des {
       color: var(--grayColor);
@@ -668,9 +669,15 @@ header {
       width: 100%;
       height: 90%;
       transform: translateY(-50%) skewX(-5deg);
+      @media screen and (max-width: 768px) {
+        transform: translateY(-50%) skewX(-3deg) scale(0.9);
+      }
     }
     .lazyDiv {
       transform: skewX(-5deg);
+      @media screen and (max-width: 768px) {
+        transform: skewX(-3deg) scale(0.9);
+      }
       height: 100%;
       margin: auto;
       filter: grayscale(1);
@@ -1942,6 +1949,11 @@ header {
           }
         }
       }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .row {
+      flex-direction: column-reverse;
     }
   }
 }
