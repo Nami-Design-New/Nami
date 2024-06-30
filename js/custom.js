@@ -280,8 +280,8 @@ $(document).ready(function () {
       },
     },
   });
-  //clients Slider
-  var clients = new Swiper(".clients .swiper", {
+  //hero Slider
+  var hero = new Swiper(".hero .swiper", {
     // centeredSlides: true,
     loop: true,
     slidesPerView: "auto",
@@ -294,20 +294,6 @@ $(document).ready(function () {
     autoplay: {
       delay: 1500,
       disableOnInteraction: false,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 4,
-      },
-      991: {
-        slidesPerView: 5,
-      },
-      1400: {
-        slidesPerView: 6,
-      },
     },
   });
   $(".ourWork .swiper").hover(
