@@ -166,6 +166,21 @@ $(document).ready(function () {
       });
     }
   });
+  // Text Invert With Scroll
+  const split = new SplitText(".text_invert", { type: "lines" });
+
+  split.lines.forEach((target) => {
+    gsap.to(target, {
+      backgroundPositionX: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: target,
+        scrub: 1,
+        start: "top 70%",
+        end: "bottom center",
+      },
+    });
+  });
   // scroll
   const sections = document.querySelectorAll(".active-nav-class");
   $(window).on("scroll", function () {
@@ -206,8 +221,8 @@ $(document).ready(function () {
       e.preventDefault();
     }
   });
-  //partnersSlider Slider
-  var partnersSlider = new Swiper(".partnersSlider", {
+  //clients Slider
+  var clients = new Swiper(".clients .swiper", {
     // centeredSlides: true,
     loop: true,
     slidesPerView: "auto",
@@ -265,6 +280,36 @@ $(document).ready(function () {
       },
     },
   });
+  //clients Slider
+  var clients = new Swiper(".clients .swiper", {
+    // centeredSlides: true,
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 12,
+    speed: 1000,
+    pagination: {
+      el: ".partnersPagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      991: {
+        slidesPerView: 5,
+      },
+      1400: {
+        slidesPerView: 6,
+      },
+    },
+  });
   $(".ourWork .swiper").hover(
     function () {
       this.swiper.autoplay.stop();
@@ -281,42 +326,6 @@ $(document).ready(function () {
         "...";
       $(this).text(truncatedText);
     }
-  });
-
-  // item Details Slider
-  var itemDetailsSliderThumbs = new Swiper(".itemDetailsSlider .thumbs", {
-    // loop: true,
-    spaceBetween: 8,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-    breakpoints: {
-      0: {
-        slidesPerView: 3,
-      },
-      576: {
-        slidesPerView: 4,
-      },
-      992: {
-        slidesPerView: 5,
-        direction: "vertical",
-      },
-    },
-  });
-  var itemDetailsSliderSlider = new Swiper(".itemDetailsSlider .slider", {
-    // loop: true,
-    spaceBetween: 8,
-    pagination: {
-      el: ".itemDetailsSlider .swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".itemDetailsSlider .swiper-button-next",
-      prevEl: ".itemDetailsSlider .swiper-button-prev",
-    },
-    thumbs: {
-      swiper: itemDetailsSliderThumbs,
-    },
   });
 });
 // ////////////////////////////////////////
