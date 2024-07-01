@@ -444,6 +444,16 @@ header .inner .navbar .logo img {
   }
   header .inner .navbar .navbar-nav .navLink {
     flex: unset;
+    border-radius: 12px;
+  }
+  header .inner .navbar .navbar-nav .navLink.active {
+    color: var(--whiteColor);
+    background: var(--linearGradient);
+    background-size: 400%;
+    animation: animateBg 5s linear infinite;
+  }
+  header .inner .navbar .navbar-nav .navLink::before {
+    display: none;
   }
 }
 header .inner .language {
@@ -583,6 +593,7 @@ header.headerAnimate .inner {
 .hero {
   display: flex;
   align-items: center;
+  flex-direction: column;
   position: relative;
   isolation: isolate;
   width: min(100% - 24px, 1320px);
@@ -653,10 +664,25 @@ header.headerAnimate .inner {
 .hero:hover .shapes span:nth-child(3) {
   width: 35%;
 }
-.hero .swiper .item {
+.hero .swiper {
+  width: 100%;
+  padding: 0 24px;
+}
+.hero .swiper .swiper-wrapper {
+  transition-timing-function: linear;
+}
+.hero .swiper .swiper-slide {
+  padding: 8px 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.hero .swiper .swiper-slide .item {
   padding: 4px 16px;
   border-radius: 100px;
   border: 1px solid var(--whiteColor);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .scrollDown {

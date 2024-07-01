@@ -421,7 +421,16 @@ header {
           }
           .navLink {
             flex: unset;
-            // color: var(--mainColor);
+            border-radius: 12px;
+            &.active {
+              color: var(--whiteColor);
+              background: var(--linearGradient);
+              background-size: 400%;
+              animation: animateBg 5s linear infinite;
+            }
+            &::before {
+              display: none;
+            }
           }
         }
       }
@@ -568,10 +577,10 @@ header {
     }
   }
 }
-
 .hero {
   display: flex;
   align-items: center;
+  flex-direction: column;
   position: relative;
   isolation: isolate;
   width: min(100% - 24px, 1320px);
@@ -599,7 +608,7 @@ header {
       line-height: 1.2;
       text-transform: uppercase;
     }
-    .des{
+    .des {
       text-wrap: balance;
     }
     .outlineGradient {
@@ -620,7 +629,7 @@ header {
       mask-size: cover;
     }
   }
-  .shapes{
+  .shapes {
     top: 0;
     right: unset;
     left: 0;
@@ -639,11 +648,21 @@ header {
       }
     }
   }
-  .swiper{
-    .item{
-      padding: 4px 16px;
-      border-radius: 100px;
-      border: 1px solid var(--whiteColor);
+  .swiper {
+    width: 100%;
+    padding: 0 24px;
+    .swiper-wrapper {
+      transition-timing-function: linear;
+    }
+    .swiper-slide {
+      padding: 8px 0;
+      width: fit-content;
+      .item {
+        padding: 4px 16px;
+        border-radius: 100px;
+        border: 1px solid var(--whiteColor);
+        user-select: none;
+      }
     }
   }
 }
@@ -1149,6 +1168,14 @@ header {
     }
   }
 }
+// .swiper-slide{
+//   opacity: 0;
+//   transition: var(--transition);
+// }
+// .swiper-slide-active,
+// .swiper-slide-visible {
+//   opacity: 1;
+// }
 .clients {
   position: relative;
   z-index: 2;
@@ -1618,8 +1645,6 @@ header {
     }
   }
 }
-
-
 .stats {
   .container {
     position: relative;
@@ -1631,7 +1656,6 @@ header {
     animation: animateBg 5s linear infinite;
     background-size: 400%;
     overflow: hidden;
- 
     .top {
       text-align: center;
       padding-bottom: 55px;
