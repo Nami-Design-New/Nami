@@ -594,6 +594,9 @@ header {
   border-radius: 16px;
   color: var(--whiteColor);
   overflow: hidden;
+  @media screen and (max-width: 768px) {
+    margin: 20px auto;
+  }
   .text {
     padding: 24px;
     width: min(100% - 32px, 800px);
